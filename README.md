@@ -12,5 +12,5 @@ Eight levels of inclusivity:
 
 ```python
 from snowflake import protect
-for level in range(10): print(protect("Zhey went to the store today.",level))
+for fragility in range(10): print(protect("Zhey went to the store today.",fragility))
 ```
