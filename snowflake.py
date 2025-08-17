@@ -14,15 +14,15 @@ import re
 	9+	Ulimate inclusivity! Not even any triggering punctuation.
 
 	from snowflake import protect
-	for level in range(10): print(protect("Zhey went to the store today.",level))
+	for fragility in range(10): print(fragility,protect("Zhey went to the store for zher medication today.",fragility))
 """
-def protect(triggered,level=1,safe="*",triggering="aeiouAEIOU"):
+def protect(triggered,fragility=1,safe="*",triggering="aeiouAEIOU"):
 	woke=""
 	for word in re.split(r"([^\w]+)",triggered):
 		if not re.match(r"[\w]+",word):
 			woke+=word
 			continue
-		match level:
+		match fragility:
 			case 0: return triggered
 			case 1: pass
 			case 2: pass
@@ -33,7 +33,5 @@ def protect(triggered,level=1,safe="*",triggering="aeiouAEIOU"):
 			case 7: word=safe
 			case 8: word=""
 			case _: return ""
-		woke+=re.sub(f"[{triggering}]",safe,word,count=1 if level<2 else 0)
+		woke+=re.sub(f"[{triggering}]",safe,word,count=1 if fragility<2 else 0)
 	return woke
-
-for level in range(10): print(level,protect("Zhey went to the store today.",level))
